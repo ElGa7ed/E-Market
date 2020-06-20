@@ -1,0 +1,472 @@
+﻿body {
+ 
+}
+*{
+    box-sizing:border-box !important;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/***********************************/
+/*-------- start upprer nave-------*/
+.upper-nave {
+    padding: 8px;
+    background:  #131313;
+    
+}
+.upper-nave .icon-socail {
+    font-size: 18px;
+    word-spacing: 20px;
+}
+.upper-nave .icon-socail a{
+    color:#404040;
+    transition: all 0.3s ease-in-out;
+}
+    .upper-nave .icon-socail a:hover {
+        color: #FFB400;
+        transition: all 0.3s ease-in-out;
+    }
+.upper-nave .phone-data {
+    font-size: 14px;
+    word-spacing: 4px;
+    
+    letter-spacing: 2px;
+}
+.upper-nave .phone-data span {
+    margin-right: 12px;
+    color: #a9a9a9;
+    display:inline-block;
+}
+.upper-nave .phone-data span i {
+    color: #FFB400;
+}
+.upper-nave .phone-data .phone::after {
+    content: "|";
+    margin: 0 10px;
+    color: #FFB400;
+}
+
+
+    /*********  navebar header****/
+.navbar
+{
+    border:none;
+    margin:0;
+}
+.navbar-header {
+    background: #FFB400;
+    width: 100%;
+    padding: 15px;
+}
+@media (max-width : 768px)
+{
+    .dispaly-none-sm 
+    {
+        display: none !important;
+    }
+}
+@media (min-width : 769px) {
+    .dispaly-none-lg {
+        display: none !important;
+    }
+}
+
+
+/* nave prand */
+
+.navbar-brand {
+
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff !important;
+}
+.navbar-brand:hover
+{
+    color:#fff !important;
+}
+.navbar-brand span {
+    color:#000;
+}
+
+.login li i {
+    color: #fff;
+    font-size: 4rem;
+}
+.login li a {
+    padding: 5px 14px;
+    color: #323232 !important;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+.login li a:hover
+{
+    background: none;
+    color:#000; 
+
+}
+.navbar-collapse i {
+    color: #fff;
+    display:block;
+    font-size:4rem;
+    padding:1rem;
+}
+.navbar-collapse .links {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .navbar-collapse .links a {
+        font-size: 1.5rem;
+        padding: 0 15px;
+        color: #000;
+        margin: 0 19px;
+        transition: all 0.3s ease-in-out;
+    }
+
+.navbar-collapse .links a:hover {
+    background: none;
+    color: #fff;
+
+}
+
+.navbar-collapse .product-shop button {
+    color:#000;
+    font-size:15px;
+    letter-spacing:1px;
+    word-spacing:1px;
+    background:none;
+    border:none;
+
+
+}
+
+/*****************   start header **************/
+.header {
+    background: url(../image/2610.jpg) center -36% fixed no-repeat;
+    background-size: cover;
+    height: 570px;
+    position:relative;
+}
+.header .content
+{
+    position:absolute;
+    top:50%;
+    left:10%;
+    transform:translateY(-50%);
+}
+    .header .content h3 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 0;
+        letter-spacing: -1px;
+        margin: 0;
+    }
+
+    .header .content h2 {
+        color: #ffb400;
+        margin: 0;
+        padding: 5px 0;
+        font-size: 6rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    .header .content p {
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+    .header .content .btn {
+        width: 200px;
+        color: #000;
+        margin: 10px 0;
+        padding: 9px;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-align: left;
+        border: 1px solid #000;
+        border-radius: 0;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+    }
+.header .content .btn::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f35a";
+    text-align: center;
+    width: 40px;
+    padding: 0px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    font-size: 24px;
+    line-height: 40px;
+    top: 0;
+    height: 103%;
+    background: #000;
+    color: #FFB400;
+}
+
+
+.header .content .btn:hover {
+    color: #FFB400;
+}
+/******* **** search **********/
+.search {
+    width: 100%;
+    height: 350px;
+    background: url('../image/3050091.jpg') center center scroll no-repeat;
+        
+    background-size: cover;
+}
+.search .overlay
+{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+}
+     .h2 {
+        text-transform: capitalize;
+        font-weight: bold;
+        color: #ddd;
+        padding: 0;
+        margin: 35px 0 20px 0;
+        position: relative;
+        display: inline-block;
+    }
+
+ .h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    /* right: -60px; */
+    width: 55px;
+    margin-left: 10px;
+    height: 3px;
+    background: #FFB400;
+}
+
+ .h2::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    /* right: -60px; */
+    width: 55px;
+    margin-right: -30px;
+    height: 3px;
+    background: #FFB400;
+}
+.search p{
+
+    font-size:16px;
+    color:#ddd;
+    text-transform:capitalize;
+    margin:10px 0;
+
+}
+
+.search .input-group {
+    display: flex;
+    justify-content: center;
+    width: 60% !important;
+    margin: 58px auto;
+}
+.search .input-group .form-control {
+padding: 10px;
+max-width: 500px !important;
+background: rgba(0,0,0,0.5);
+height: 44px;
+border: none;
+border-radius: 0;
+}
+
+
+.search .input-group span {
+    margin-left: 39px;
+    width: 80px;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    height: 44px;
+    color: #ffb400;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+
+
+/************ stat card **********/
+
+.card {
+    border-radius: 10px 10px 0 0;
+
+    overflow: hidden;
+    margin: 20px 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.card .image-content 
+{
+    height: 150px;
+    overflow:hidden;
+    position:relative;
+
+}
+    .card .image-content::after {
+        content:'';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        height: 85%;
+        border: 2px solid #FFB400;
+    }
+
+
+    .card .image-content img
+    {
+        width:100%;
+
+    }
+
+.card h3{
+    margin: 0;
+    background: #000;
+    padding: 10px;
+    color: #ffb400;
+    font-size: 17px;
+    text-transform: capitalize;
+    border-bottom: 5px solid #ffb400;
+}
+    .card h4 {
+        width: 65%;
+        margin: 0 auto 14px;
+        position: relative;
+        padding: 6px 0px;
+    }
+.card h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFB400;
+    transform: skewX(-20deg);
+    z-index: -1;
+    padding: 10px;
+}
+
+.card .btn {
+    border-radius: 0;
+    color: #000;
+    background: transparent;
+    border: 1px solid #ffb400;
+    transition:all 0.3s ease-in-out;
+}
+    .card .btn:hover {
+        color: #FFB400;
+        background: #000;
+    }
+    .card .btn.cart {
+        color: #FFB400;
+        background: #000;
+        padding: 7px;
+        border: 1px solid #000;
+        font-weight: bold;
+    }
+    .card .btn.cart:hover {
+        color: #000;
+        background: transparent;
+        border: 1px solid #ffb400;
+    }
+
+
+    /**************************/
+.image-details
+{
+    width:60%;
+    margin:auto;
+    overflow:hidden;
+    text-align:center;
+   
+}
+.image-details img
+{
+    max-width:100%;
+    display:block   
+}
+.details h3 {
+    text-transform: uppercase;
+    border-bottom: 3px solid #ffb400;
+    padding: 5px;
+    display: inline-block;
+    position:relative;
+}
+    .details h3::before {
+        content: '';
+        position: absolute;
+        left: -21px;
+        top: 9px;
+        width: 15px;
+        height: 15px;
+        border: 2px solid #FFB400;
+        transform: rotate(45deg);
+    }
+    .details p {
+        font-size: 20px;
+        color: #888888;
+        text-transform: capitalize;
+    }
+
+
+
+    .footer
+    {
+        background:#000;
+        color:#FFB400;
+        text-align:center;
+        
+      
+        width:100%;
+        padding:20px;
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

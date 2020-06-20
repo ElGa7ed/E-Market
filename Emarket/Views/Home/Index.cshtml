@@ -1,0 +1,140 @@
+﻿@model Emarket.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+<div class="header">
+    <div class="content">
+        <h3>E mark for shop</h3>
+        <h2>BIgest sale</h2>
+        <p>all the trand you need this season</p>
+        <a class="btn  " href="@Url.Action("Create", "Products")">Add Product</a>
+    </div>   
+</div>
+
+
+<div class="search">
+    <div class="overlay text-center">
+        <div class="container">
+            <h2 class="h2"> search for get fast proudcts </h2>
+            <p>thats section for make you get what you need for make it speed to search </p>
+            @using (Html.BeginForm("Search", "Products"))
+            {
+                <div class="form-group">
+                    <div id=" searchgigs" class="input-group" >
+                        @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", placeholder = "Search by Name , Category...." })
+                        <span class="input-group-addon">
+                            <i type="submit" class="glyphicon glyphicon-search"></i>
+                        </span>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+   
+</div>
+<div class="container text-center">
+
+
+    <h2 class="h2 text-center" style="color:#000">our products </h2>
+
+    <div class="row">
+        @foreach (var product in Model.UpcomingProducts)
+        {
+            <div class="col-md-2  ">
+                <div class="card">
+                    <div class="image-content">
+                        <img src="~/Images/@Url.Content(product.image)">
+                    </div>
+
+                    <h3 style="text-align:center; font-size:20px"> @product.name</h3>
+                    <h4 class="text-center">@product.price $</h4>
+                    <a href="@Url.Action("Details","Products",new { id=product.id})" class="btn "><strong>Details</strong></a>
+                    <button data-cart-id="@product.id"
+                            class="btn btn-sm  cart">
+                        AddToCart
+                    </button>
+                </div>
+                
+
+            </div>
+
+        }
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            $(".cart").click(function (e) {
+                var button = $(e.target);
+                if (button.hasClass("btn-primary")) {
+                    $.ajax({
+                        url: "/api/cart/" + button.attr("data-cart-id"),
+                        method: "POST"
+                    })
+                        .done(function () {
+
+                            button
+                                .removeClass("btn-primary")
+                                .addClass("btn-default")
+                                .text("Added");
+                        })
+                        .fail(function () {
+                            alert("This Product Add before!!");
+                        });
+                }
+                //} else
+                //{
+                //    $.ajax({
+                //        url:"/api/attendances/" + button.attr("data-gig-id"),
+                //        method:"DELETE"
+                //    })
+                //            .done(function () {
+
+                //                button
+                //                    .removeClass("btn-info")
+                //                    .addClass("btn-default")
+                //                    .text("Going?");
+                //            })
+                //                   .fail(function () {
+                //                       alert("SOmething Wrong!!");
+                //                   });
+
+                //}
+            });
+
+        });
+
+        var Opencart = function () {
+            var url = "/Home/Cart";
+            $("#modalBody").load(url, function () {
+                $("#myModal").modal("show");
+            })
+        }
+    </script>
+
+}

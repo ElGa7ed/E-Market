@@ -1,0 +1,135 @@
+﻿@model Emarket.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2" style="color:#000">Details</h2>
+        </div>
+
+
+        <div class="product">
+
+            
+
+
+                <div class="image-details">
+                    <img src="~/Images/@Url.Content(Model.image)" >
+                </div>
+
+                <div class="details text-center">
+                    <h3>
+                        @Html.DisplayNameFor(model => model.name)
+                    </h3>
+                    <p>
+                        @Html.DisplayFor(model => model.name)
+                    </p>
+
+
+                    <h3>
+                        @Html.DisplayNameFor(model => model.description)
+                    </h3>
+                    <p>
+                        @Html.DisplayFor(model => model.description)
+                    </p>
+
+
+                    <div class="price">
+                        <h3>
+                            @Html.DisplayNameFor(model => model.price)
+                        </h3>
+                        <p>
+                            @Html.DisplayFor(model => model.price)
+                        </p>
+
+                    </div>
+
+                    <a class="btn btn-info " href="@Url.Action("Edit", "Products", new {id=Model.id })">Update</a>
+                    <a class="btn btn-danger js-delete-product" data-product-id="@Model.id">Delete</a>
+                </div>
+
+
+
+
+
+    
+
+
+
+
+                @*<dt>
+                    @Html.DisplayNameFor(model => model.description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.description)
+                </dd>*@
+
+            
+      
+        </div>
+
+        <br />
+        <p>
+
+            @Html.ActionLink("Back to List", "Index", "Home")
+        </p>
+
+    </div>
+
+
+
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            $(".js-delete-product").click(function (e) {
+
+                var Link = $(e.target);
+                bootbox.dialog({
+                    title: "Confirm",
+                    message: "Are you sure you want to Delete this  ?",
+
+                    buttons: {
+                        No: {
+                            label: "No",
+                            className: 'btn-default',
+                            callback: function () {
+                                bootbox.hideAll();
+                            }
+                        },
+                        yes: {
+                            label: "Yes",
+                            className: 'btn-danger',
+                            callback: function () {
+                                $.ajax({
+                                    url:"/api/Products/" + Link.attr("data-product-id"),
+                                    method:"DELETE"
+                                })
+                                  .done(function () {
+
+                                      Link.parents(".product").fadeOut(function () {
+                                          $(this).remove();
+                                      });
+                                  })
+                                  .fail(function () {
+                                      alert("somthing fail");
+                                  });
+                            }
+                        }
+
+
+                    }
+                });
+
+
+
+
+            });
+        });
+    </script>
+}

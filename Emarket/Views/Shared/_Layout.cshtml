@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+
+    <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <!-- start upper nav -->
+    <div class="upper-nave ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="icon-socail">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="phone-data text-right">
+                        <span class="phone"><i class="fas fa-phone-alt"></i> 01141576780 </span>
+                        <span><i class="fas fa-envelope"></i> contact@domain.com </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end upper nave -->
+    <div class="navbar  ">
+
+        <div class="navbar-header ">
+            <div class="container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @*@Html.ActionLink("Emarket ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand " })*@
+                <a href="" class="navbar-brand">
+                    eMarket <span>shop</span>
+                </a>
+                <div class="navbar-collapse collapse text-center">
+                    <div class="container">
+
+                        <div >
+                            <div class="links">
+                                <ul class="nav navbar-nav ml-auto">
+                                    <li>
+                                        <i class="fas fa-home"></i>
+                                        @Html.ActionLink("Home", "Index", "Home")
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-info-circle"></i>
+                                        @Html.ActionLink("About", "About", "Home")
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-envelope"></i>
+                                        @Html.ActionLink("Contact", "Contact", "Home")
+                                    </li>
+                                </ul>
+                                <div class="product-shop">
+                                    <button type="button" onclick="Opencart()" class="button">
+                                    <i class="fas fa-shopping-cart"></i> 
+                                    shopning card
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    
+        @RenderBody()
+        <hr />
+        <footer class="footer">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
